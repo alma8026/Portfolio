@@ -1,0 +1,73 @@
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2.5px;
+    background-color: #38bdf8;
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+  
+  .nav-link:hover {
+    color: #38bdf8;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .cvImg {
+    transition: transform 0.75s ease;
+  }
+  
+  .cvImg:hover {
+    transform: scale(1.09);
+    cursor: pointer;
+  }
+
+  /* Footer */
+.social-icons a {
+    color: #fff; /* Color de los iconos */
+    margin-right: 10px; /* Espacio entre los iconos */
+    font-size: 28px; /* Tamaño de los iconos */
+}
+
+.social-icons a i {
+    transition: transform 0.6s ease;
+}
+
+.social-icons a i.fa-instagram:hover {
+    background: linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        background-clip: text;
+        -webkit-text-fill-color: transparent; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.4);
+}
+.social-icons a i.fa-linkedin:hover {
+    color: #0077B5; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.4);
+}
+.social-icons a i.fa-twitter:hover {
+    color: #1DA1F2; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.4);
+}
+.social-icons a i.fa-github:hover {
+    color: #111; /* Color al pasar el raton por el icono instagram */
+    transform: scale(1.4);
+}
+footer {
+    background: linear-gradient(to bottom, #373b4e, #232636);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid #202024;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
