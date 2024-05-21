@@ -1,0 +1,11 @@
+#conoceMasBtn {
+    .arrow {
+        transition: transform 0.6s ease-in-out;
+    }
+}
+
+#conoceMasBtn:hover {
+    .arrow {
+        transform: translateX(15px) scale(1.3);
+    }
+}
