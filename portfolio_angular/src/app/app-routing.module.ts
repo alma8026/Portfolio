@@ -7,12 +7,12 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: '' } // Ruta por defecto si no se encuentra ninguna ruta
+  { path: 'Portfolio/', component: HomeComponent },
+  { path: 'Portfolio/about', component: AboutComponent },
+  { path: 'Portfolio/skills', component: SkillsComponent },
+  { path: 'Portfolio/projects', component: ProjectsComponent },
+  { path: 'Portfolio/contact', component: ContactComponent },
+  { path: '**', redirectTo: 'full' } // Ruta por defecto si no se encuentra ninguna ruta
 ];
 
 @NgModule({
