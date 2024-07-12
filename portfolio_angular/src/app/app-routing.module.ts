@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'skills', component: SkillsComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
-  // Agrega más rutas si es necesario
+  { path: '**', redirectTo: '' } // Ruta por defecto si no se encuentra ninguna ruta
 ];
 
 @NgModule({
