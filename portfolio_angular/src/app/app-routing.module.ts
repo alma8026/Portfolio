@@ -8,10 +8,10 @@ import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Portfolio/about', component: AboutComponent },
-  { path: 'Portfolio/skills', component: SkillsComponent },
-  { path: 'Portfolio/projects', component: ProjectsComponent },
-  { path: 'Portfolio/contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'skills', component: SkillsComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' } // Ruta por defecto si no se encuentra ninguna ruta
 ];
 
