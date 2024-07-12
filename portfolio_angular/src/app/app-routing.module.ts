@@ -12,11 +12,11 @@ const routes: Routes = [
   { path: 'Portfolio/skills', component: SkillsComponent },
   { path: 'Portfolio/projects', component: ProjectsComponent },
   { path: 'Portfolio/contact', component: ContactComponent },
-  { path: '**', redirectTo: 'full' } // Ruta por defecto si no se encuentra ninguna ruta
+  { path: '**', redirectTo: '', pathMatch: 'full' } // Ruta por defecto si no se encuentra ninguna ruta
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
