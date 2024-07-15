@@ -26,7 +26,8 @@ export class ProjectsComponent {
       'assets/images/aura_page2.png',
       'assets/images/aura_page3.png'
     ],
-    currentIndex: 0 // Índice de la imagen actual
+    currentIndex: 0, // Índice de la imagen actual
+    isExpanded: false
   };
 
   project2 = {
@@ -36,7 +37,8 @@ export class ProjectsComponent {
       'assets/images/PokemonCards2.PNG',
       'assets/images/PokemonCards3.PNG'
     ],
-    currentIndex: 0 // Índice de la imagen actual
+    currentIndex: 0, // Índice de la imagen actual
+    isExpanded: false
   };
 
   project3 = {
@@ -46,7 +48,8 @@ export class ProjectsComponent {
       'assets/images/E-learn2.PNG',
       'assets/images/E-learn3.PNG'
     ],
-    currentIndex: 0 // Índice de la imagen actual
+    currentIndex: 0, // Índice de la imagen actual
+    isExpanded: false
   };
 
   // Función para cambiar a la imagen anterior
@@ -59,6 +62,16 @@ export class ProjectsComponent {
   nextImage(project: any) {
     project.currentIndex = (project.currentIndex + 1) % project.images.length;
     project.currentImage = project.images[project.currentIndex];
+  }
+
+  expandImage(project: any) {
+    project.isExpanded = true;
+    document.body.classList.add('overflow-hidden'); // Ocultar el scroll del body
+  }
+
+  collapseImage(project: any) {
+    project.isExpanded = false;
+    document.body.classList.remove('overflow-hidden'); // Restaurar el scroll del body
   }
   
 }

@@ -13,7 +13,21 @@
               </span>
       
               <!-- Imagen -->
-              <img [src]="project1.currentImage" alt="Aura Project Image" class="w-full h-64 object-cover rounded-t-lg hover:cursor-pointer">
+              <img [src]="project1.currentImage" alt="Project Image" class="cursor-pointer" (click)="expandImage(project1)">
+
+              <!-- Contenedor de la imagen expandida -->
+              <div *ngIf="project1.isExpanded" class="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-75">
+                <!-- Contenedor interno para centrar y limitar el tamaño -->
+                <div class="max-w-6xl max-h-6xl overflow-hidden bg-gray-900 p-4 sm:p-8">
+                  <!-- Imagen expandida -->
+                  <img [src]="project1.currentImage" alt="Expanded Project Image" class="object-contain h-full w-full">
+
+                  <!-- Botón para cerrar -->
+                  <button class="absolute top-4 right-4 text-white text-4xl sm:text-6xl scale-125 hover:scale-150 transition duration-300" (click)="collapseImage(project1)">
+                    &times;
+                  </button>
+                </div>
+              </div>
 
               <!-- Flecha derecha -->
               <span (click)="nextImage(project1)" class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-xl p-1 hover:bg-gray-400 hover:scale-125 transition duration-300 cursor-pointer">
@@ -77,7 +91,21 @@
               </span>
       
               <!-- Imagen -->
-              <img [src]="project2.currentImage" alt="Pokemon cards Image" class="img-shadow w-full  h-64 object-cover rounded-t-lg hover:cursor-pointer">
+              <img [src]="project2.currentImage" alt="Project Image" class="cursor-pointer" (click)="expandImage(project2)">
+
+              <!-- Contenedor de la imagen expandida -->
+              <div *ngIf="project2.isExpanded" class="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-75">
+                <!-- Contenedor interno para centrar y limitar el tamaño -->
+                <div class="max-w-6xl max-h-6xl overflow-hidden bg-gray-900 p-4 sm:p-8">
+                  <!-- Imagen expandida -->
+                  <img [src]="project2.currentImage" alt="Expanded Project Image" class="object-contain h-full w-full">
+
+                  <!-- Botón para cerrar -->
+                  <button class="absolute top-4 right-4 text-white text-4xl sm:text-6xl scale-125 hover:scale-150 transition duration-300" (click)="collapseImage(project2)">
+                    &times;
+                  </button>
+                </div>
+              </div>
 
               <!-- Flecha derecha -->
               <span (click)="nextImage(project2)" class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-xl p-1 hover:bg-gray-400 hover:scale-125 transition duration-300 cursor-pointer">
@@ -140,7 +168,21 @@
               </span>
       
               <!-- Imagen -->
-              <img [src]="project3.currentImage" alt="Project Image" class="w-full h-64 object-cover rounded-t-lg hover:cursor-pointer">
+              <img [src]="project3.currentImage" alt="Project Image" class="cursor-pointer" (click)="expandImage(project3)">
+
+              <!-- Contenedor de la imagen expandida -->
+              <div *ngIf="project3.isExpanded" class="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-75">
+                <!-- Contenedor interno para centrar y limitar el tamaño -->
+                <div class="max-w-6xl max-h-6xl overflow-hidden bg-gray-900 p-4 sm:p-8">
+                  <!-- Imagen expandida -->
+                  <img [src]="project3.currentImage" alt="Expanded Project Image" class="object-contain h-full w-full">
+
+                  <!-- Botón para cerrar -->
+                  <button class="absolute top-4 right-4 text-white text-4xl sm:text-6xl scale-125 hover:scale-150 transition duration-300" (click)="collapseImage(project3)">
+                    &times;
+                  </button>
+                </div>
+              </div>
 
               <!-- Flecha derecha -->
               <span (click)="nextImage(project3)" class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-xl p-1 hover:bg-gray-400 hover:scale-125 transition duration-300 cursor-pointer">
@@ -193,7 +235,7 @@
         </div>
 
       </div>
-  </div>
+  </div> 
 
 
 <!-- projects.component.html -->
