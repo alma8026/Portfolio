@@ -1,29 +1,48 @@
-<div class="min-h-screen flex items-center justify-center px-4">
+<div class="min-h-screen flex items-center justify-center px-4 scale-">
     <div class="max-w-2xl w-full bg-white p-8 rounded-lg shadow-lg">
-      <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">Contact Me</h2>
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div class="mb-4">
-          <label for="name" class="block text-gray-700">Name</label>
-          <input type="text" id="name" formControlName="name" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        </div>
-        <div class="mb-4">
-          <label for="email" class="block text-gray-700">Email</label>
-          <input type="email" id="email" formControlName="email" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        </div>
-        <div class="mb-4">
-          <label for="subject" class="block text-gray-700">Subject</label>
-          <input type="text" id="subject" formControlName="subject" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        </div>
-        <div class="mb-4">
-          <label for="message" class="block text-gray-700">Message</label>
-          <textarea id="message" formControlName="message" rows="5" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="w-full bg-indigo-600 text-white p-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            Send Message
-          </button>
-        </div>
-      </form>
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">Contact Me</h2>
+        <form (ngSubmit)="enviarCorreo()" #contactForm="ngForm">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700">Name</label>
+                <input type="text" id="name" name="name" [(ngModel)]="name" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" name="email" [(ngModel)]="email" email required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="subject" class="block text-gray-700">Subject</label>
+                <input type="text" id="subject" name="subject" [(ngModel)]="subject" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700">Message</label>
+                <textarea id="message" name="message" rows="5" [(ngModel)]="message" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" [disabled]="!contactForm.valid" [style.backgroundColor]="!contactForm.valid ? '#cccccc' : '#4a90e2'" class="w-full bg-indigo-600 text-white p-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    Send Message
+                </button>
+            </div>
+        </form>
     </div>
-  </div>
-  
+
+    <!-- Fondo oscurecido -->
+    <div class="popup-fondo" [ngClass]="{'mostrar-popup': enviadoExitosamente || enviadoErroneo}" (click)="cerrarMensaje()">
+
+    <!-- Popup de éxito -->
+    <div *ngIf="enviadoExitosamente" class="popup">
+        <div class="popup-contenido">
+            <h3 *ngIf="enviadoExitosamente">¡Correo enviado con éxito!</h3>
+            <h3 *ngIf="enviadoErroneo">Error al enviar el correo</h3>
+        <p>{{ enviadoExitosamente ? 'El correo se ha enviado correctamente.' : 'Ha ocurrido un error al enviar el correo.' }}</p>
+        <button (click)="cerrarMensaje()" class="close-btn">Cerrar</button>
+        </div>
+    </div>
+    <div *ngIf="enviadoErroneo" class="popup_err">
+        <div class="popup-contenido">
+          <h3>¡Error al enviar el correo!</h3>
+          <p>El correo no se ha enviado.</p>
+          <button class="close-btn" (click)="cerrarMensaje2()">Cerrar</button>
+        </div>
+    </div>
+</div>

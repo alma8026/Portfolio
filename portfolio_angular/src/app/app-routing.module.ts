@@ -5,6 +5,9 @@ import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +19,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [ContactComponent],
+  imports: [HttpClientModule, ReactiveFormsModule, CommonModule, RouterModule.forRoot(routes), FormsModule],
+  providers: [HttpClientModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

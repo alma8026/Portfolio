@@ -1,0 +1,66 @@
+.popup-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 999; /* Colocar detrás del popup pero delante del resto */
+    display: none; /* Inicialmente oculto */
+  }
+  
+  .popup {
+    position: fixed;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(138deg, rgba(77,124,15,1) 0%, rgba(163,230,53,1) 30%, rgba(154,217,50,1) 50%, rgba(155,218,50,1) 57%, rgba(163,230,53,1) 75%, rgba(77,124,15,1) 100%);
+    border: 1px solid #ccc;
+    padding: 40px;
+    z-index: 1000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+  }
+
+  .popup_err {
+    color: white;
+    position: fixed;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(159deg, rgba(255,0,0,1) 11%, rgba(217,23,6,1) 27%, rgba(255,0,0,1) 60%, rgba(194,12,12,1) 89%, rgba(139,0,0,1) 100%);
+    border: 1px solid #ccc;
+    padding: 40px;
+    z-index: 1000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    text-shadow: 2px 2px 4px black;
+  }
+  
+  .popup-contenido {
+    text-align: center;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  
+  .mostrar-popup {
+    display: block; /* Mostrar el popup y el fondo */
+  }
+  .close-btn {
+    border: 1px solid black;
+    color: black;
+    background: linear-gradient(138deg, rgba(220,234,255,1) 0%, rgba(162,162,162,1) 100%);
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: transform 0.6s ease;
+    margin-top: 20px;
+    box-shadow: 2px 2px 4px black;
+  }
+  .close-btn:hover {
+    transform: scale(1.1);
+  }
