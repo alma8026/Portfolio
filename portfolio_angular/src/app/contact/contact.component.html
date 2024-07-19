@@ -32,17 +32,32 @@
     <!-- Popup de éxito -->
     <div *ngIf="enviadoExitosamente" class="popup">
         <div class="popup-contenido">
-            <h3 *ngIf="enviadoExitosamente">¡Correo enviado con éxito!</h3>
-            <h3 *ngIf="enviadoErroneo">Error al enviar el correo</h3>
-        <p>{{ enviadoExitosamente ? 'El correo se ha enviado correctamente.' : 'Ha ocurrido un error al enviar el correo.' }}</p>
-        <button (click)="cerrarMensaje()" class="close-btn">Cerrar</button>
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="p-4 md:p-5 text-center">
+                    <div class="flex justify-center items-center p-4 md:p-5">
+                        <svg class="h-16 w-16 text-green-400"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />  <polyline points="22 4 12 14.01 9 11.01" /></svg>
+                    </div>                    
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">The email has been sent successfully!</h3>
+                    <button (click)="cerrarMensaje()" type="button" class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                        Perfect!
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <div *ngIf="enviadoErroneo" class="popup_err">
         <div class="popup-contenido">
-          <h3>¡Error al enviar el correo!</h3>
-          <p>El correo no se ha enviado.</p>
-          <button class="close-btn" (click)="cerrarMensaje2()">Cerrar</button>
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="p-4 md:p-5 text-center">
+                    <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Error! The email has not been sent.</h3>
+                    <button (click)="cerrarMensaje2()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                        Close
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
