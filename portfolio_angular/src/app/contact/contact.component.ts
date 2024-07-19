@@ -14,10 +14,12 @@ export class ContactComponent {
   message: string = '';
   enviadoExitosamente: boolean = false; 
   enviadoErroneo: boolean = false; 
+  isLoading: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   enviarCorreo() {
+    this.isLoading = true;
     const correo = {
       name: this.name,
       email: this.email,
@@ -25,15 +27,17 @@ export class ContactComponent {
       message: this.message
     };
 
-    this.http.post<any>('http://localhost:3000/enviar-correo', correo)
+    this.http.post<any>('https://backend-portfolio-lrhu.onrender.com/enviar-correo', correo)
       .subscribe({
         next: response => {
           console.log('Correo enviado con éxito', response);
           this.enviadoExitosamente = true;
+          this.isLoading = false;
         },
         error: error => {
           console.error('Error al enviar el correo', error);
           this.enviadoErroneo = true;
+          this.isLoading = false;
         }
       });
   }

@@ -64,3 +64,23 @@
   .close-btn:hover {
     transform: scale(1.1);
   }
+
+  /* Estilos para el spinner de carga */
+.loader {
+  border: 8px solid #f3f3f3; /* Color de fondo */
+  border-top: 8px solid #3498db; /* Color del spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para la pantalla de carga */
+.fixed {
+  position: fixed;
+}
