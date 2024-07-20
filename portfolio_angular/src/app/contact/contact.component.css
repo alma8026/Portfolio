@@ -84,7 +84,7 @@
   z-index: 1;
   animation: loading 0.6s alternate infinite;
 }
-label {
+.loader label {
   color: #002;
   font-size: 18px;
   animation: bit 0.6s alternate infinite;
