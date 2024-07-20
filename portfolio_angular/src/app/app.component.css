@@ -51,15 +51,11 @@
     transform: scale(1.4);
 }
 .social-icons a i.fa-linkedin:hover {
-    color: #0077B5; /* Color al pasar el raton por el icono instagram */
-    transform: scale(1.4);
-}
-.social-icons a i.fa-twitter:hover {
-    color: #1DA1F2; /* Color al pasar el raton por el icono instagram */
+    color: #0077B5; /* Color al pasar el raton por el icono linkedin */
     transform: scale(1.4);
 }
 .social-icons a i.fa-github:hover {
-    color: #111; /* Color al pasar el raton por el icono instagram */
+    color: #111; /* Color al pasar el raton por el icono github */
     transform: scale(1.4);
 }
 footer {

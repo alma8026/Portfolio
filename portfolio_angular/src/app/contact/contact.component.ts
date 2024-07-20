@@ -33,6 +33,10 @@ export class ContactComponent {
           console.log('Correo enviado con éxito', response);
           this.enviadoExitosamente = true;
           this.isLoading = false;
+          this.name = '';
+          this.email = '';
+          this.subject = '';
+          this.message = '';
         },
         error: error => {
           console.error('Error al enviar el correo', error);
