@@ -12,12 +12,16 @@
     left: 0;
     width: 0%;
     height: 2.5px;
-    background-color: #38bdf8;
+    background-color: #00bfa5;
     transition: width 0.4s ease, left 0.4s ease;
   }
   
   .nav-link:hover {
-    color: #38bdf8;
+    color: #a7ffeb;
+    text-shadow: 0 0 5px #a7ffeb,
+              0 0 25px #a7ffeb,
+              0 0 50px #a7ffeb,
+              0 0 100px #a7ffeb;
   }
   
   .nav-link:hover::after {

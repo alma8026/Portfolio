@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';  // Para *ngIf, ngClass, etc.
+import { FormsModule } from '@angular/forms';  // Para ngModel
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
+  imports: [CommonModule, FormsModule],  // Importa los módulos necesarios
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })

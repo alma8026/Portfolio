@@ -19,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactComponent],
+  declarations: [],
   imports: [HttpClientModule, ReactiveFormsModule, CommonModule, RouterModule.forRoot(routes), FormsModule],
   providers: [HttpClientModule],
   exports: [RouterModule]
