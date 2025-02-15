@@ -4,6 +4,11 @@
     color: white;
     transition: color 0.3s ease;
   }
+
+  #mobileMenu {
+    background: rgb(62,62,62);
+background: linear-gradient(39deg, rgba(62,62,62,0.9) 0%, rgba(37,37,37,0.9) 16%, rgba(17,17,17,0.9) 40%, rgba(52,52,52,0.9) 76%, rgba(0,0,0,0.9) 100%);
+  }
   
   .nav-link::after {
     content: '';

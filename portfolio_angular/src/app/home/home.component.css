@@ -146,8 +146,8 @@ background: linear-gradient(180deg, rgba(19,12,17,0.7) 0%, rgba(17,0,24,0.7) 100
 .social-icon-3 {
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
-  background: rgb(46,46,46);
-background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(19,12,17,1) 89%, rgba(0,0,0,1) 100%);
+  background: rgb(160,222,214);
+  background: linear-gradient(57deg, rgba(160,222,214,1) 9%, rgba(0,148,127,1) 52%, rgba(15,93,83,1) 100%);
 }
 
 .socialcontainer:hover .social-icon-3 {
@@ -156,12 +156,9 @@ background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(19,12,17,1) 89%, r
 .social-icon-4 {
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.46, -0.78, 0.5, 1.56);
-
-  background: linear-gradient(
-    180deg,
-    rgba(129, 34, 144, 1) 0%,
-    rgba(77, 34, 124, 1) 91%
-  );
+  background: rgb(46,46,46);
+background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(19,12,17,1) 89%, rgba(0,0,0,1) 100%);
+  
 }
 
 .socialcontainer:hover .social-icon-4 {
