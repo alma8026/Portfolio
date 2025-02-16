@@ -1,4 +1,5 @@
 <section id="projects" class="px-4 py-64 md:px-12 bg-gray-100" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
+  <h1 class="text-4xl text-center py-4">Projects</h1>
   <div class="portfolio-container rounded-2xl text-gray-800 min-h-screen p-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
 
     <!-- CineAdvisor Card -->
@@ -7,18 +8,17 @@
       <p class="mb-2 text-sm"><strong>Technologies:</strong> Django, Tailwind CSS</p>
       <p class="mb-4 text-sm"><strong>State:</strong> In progress... 🛠️</p>
       <div class="carousel relative overflow-hidden rounded-lg shadow-inner">
-        <div class="carousel-inner flex">
+        <div class="carousel-inner carousel-inner-cine-advisor">
           <!-- Imagen 1 -->
-          <img src="assets/images/CineAdvisor1.png" alt="CineAdvisor" class="carousel-image">
-          <!-- Imagen 2 -->
-          <img src="assets/images/CineAdvisor2.png" alt="CineAdvisor" class="carousel-image">
-          <!-- Imagen 3 -->
-          <img src="assets/images/CineAdvisor3.png" alt="CineAdvisor" class="carousel-image">
+          <img *ngFor="let img of project1.images; let i = index" 
+         [src]="img" 
+         [alt]="'Image ' + i"
+         class="carousel-image">
         </div>
         <!-- Botón izquierdo fijo -->
-        <button class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
+        <button (click)="prevImage(project1)" class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
         <!-- Botón derecho fijo -->
-        <button class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
+        <button (click)="nextImage(project1)" class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
       </div>
     </div>
 
@@ -28,18 +28,16 @@
       <p class="mb-2 text-sm"><strong>Technologies:</strong> Django, Tailwind CSS</p>
       <p class="mb-4 text-sm"><strong>State:</strong> Finished ✅</p>
       <div class="carousel relative overflow-hidden rounded-lg shadow-inner">
-        <div class="carousel-inner flex">
-          <!-- Imagen 1 -->
-          <img src="assets/images/Click_and_Go1.png" alt="Click & Go" class="carousel-image">
-          <!-- Imagen 2 -->
-          <img src="assets/images/Click_and_Go2.png" alt="Click & Go" class="carousel-image">
-          <!-- Imagen 3 -->
-          <img src="assets/images/Click_and_Go3.png" alt="Click & Go" class="carousel-image">
+        <div class="carousel-inner carousel-inner-click-and-go">
+          <img *ngFor="let img of project2.images; let i = index" 
+         [src]="img" 
+         [alt]="'Image ' + i"
+         class="carousel-image">
         </div>
         <!-- Botón izquierdo fijo -->
-        <button class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 p-3 rounded-full text-white shadow-sm hover:bg-gray-400 transition-all duration-300 z-10">&#10094;</button>
+        <button (click)="prevImage(project2)" class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 p-3 rounded-full text-white shadow-sm hover:bg-gray-400 transition-all duration-300 z-10">&#10094;</button>
         <!-- Botón derecho fijo -->
-        <button class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 p-3 rounded-full text-white shadow-sm hover:bg-gray-400 transition-all duration-300 z-10">&#10095;</button>
+        <button (click)="nextImage(project2)" class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 p-3 rounded-full text-white shadow-sm hover:bg-gray-400 transition-all duration-300 z-10">&#10095;</button>
       </div>
     </div>
 
@@ -49,16 +47,16 @@
       <p class="mb-2 text-sm"><strong>Technologies:</strong> Django, Tailwind CSS</p>
       <p class="mb-4 text-sm"><strong>State:</strong> Finished ✅</p>
       <div class="carousel relative overflow-hidden rounded-lg shadow-inner">
-        <div class="carousel-inner flex">
-          <!-- Imagen 1 -->
-          <img src="assets/images/Hackathon1.png" alt="Hackathon Project" class="carousel-image">
-          <!-- Imagen 2 -->
-          <img src="assets/images/Hackathon2.png" alt="Hackathon Project" class="carousel-image">
+        <div class="carousel-inner carousel-inner-hackathon">
+          <img *ngFor="let img of project3.images; let i = index" 
+         [src]="img" 
+         [alt]="'Image ' + i"
+         class="carousel-image">
         </div>
         <!-- Botón izquierdo fijo -->
-        <button class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
+        <button (click)="prevImage(project3)" class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
         <!-- Botón derecho fijo -->
-        <button class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
+        <button (click)="nextImage(project3)" class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
       </div>
     </div>
 
@@ -68,16 +66,16 @@
       <p class="mb-2 text-sm"><strong>Technologies:</strong> HTML, CSS</p>
       <p class="mb-4 text-sm"><strong>State:</strong> Finished ✅</p>
       <div class="carousel relative overflow-hidden rounded-lg shadow-inner">
-        <div class="carousel-inner flex">
-          <!-- Imagen 1 -->
-          <img src="assets/images/PokemonCards1.PNG" alt="Pokemon Cards" class="carousel-image">
-          <!-- Imagen 2 -->
-          <img src="assets/images/PokemonCards2.PNG" alt="Pokemon Cards" class="carousel-image">
+        <div class="carousel-inner carousel-inner-pokemon-cards">
+          <img *ngFor="let img of project5.images; let i = index" 
+         [src]="img" 
+         [alt]="'Image ' + i"
+         class="carousel-image">
         </div>
         <!-- Botón izquierdo fijo -->
-        <button class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
+        <button (click)="prevImage(project5)" class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
         <!-- Botón derecho fijo -->
-        <button class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
+        <button (click)="nextImage(project5)" class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
       </div>
     </div>
 
@@ -87,16 +85,16 @@
       <p class="mb-2 text-sm"><strong>Technologies:</strong> Angular, Laravel, Node.js</p>
       <p class="mb-4 text-sm"><strong>State:</strong> Finished ✅</p>
       <div class="carousel relative overflow-hidden rounded-lg shadow-inner">
-        <div class="carousel-inner flex">
-          <!-- Imagen 1 -->
-          <img src="assets/images/aura_page1.png" alt="Aura Project" class="carousel-image">
-          <!-- Imagen 2 -->
-          <img src="assets/images/aura_page2.png" alt="Aura Project" class="carousel-image">
+        <div class="carousel-inner carousel-inner-aura-page">
+          <img *ngFor="let img of project4.images; let i = index" 
+         [src]="img" 
+         [alt]="'Image ' + i"
+         class="carousel-image">
         </div>
         <!-- Botón izquierdo fijo -->
-        <button class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
+        <button (click)="prevImage(project4)" class="carousel-control prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10094;</button>
         <!-- Botón derecho fijo -->
-        <button class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
+        <button (click)="nextImage(project4)" class="carousel-control next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-600 p-3 rounded-full text-white shadow-sm hover:bg-gray-500 transition-all duration-300 z-10">&#10095;</button>
       </div>
     </div>
 
