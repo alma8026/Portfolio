@@ -72,7 +72,7 @@
   border: 1px solid black;
   background: rgb(19,12,17);
 background: linear-gradient(180deg, rgba(19,12,17,0.7) 0%, rgba(17,0,24,0.7) 100%);
-  border-radius: 30px;
+  border-radius: 20px;
 }
 .social-login-icons svg {
   width: 40px;

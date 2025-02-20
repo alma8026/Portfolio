@@ -108,14 +108,4 @@ updateCarousel(project: any) {
   carouselInner.style.transform = `translateX(-${project.currentIndex * 100}%)`;
 }
 
-  expandImage(project: any) {
-    project.isExpanded = true;
-    document.body.classList.add('overflow-hidden'); // Ocultar el scroll del body
-  }
-
-  collapseImage(project: any) {
-    project.isExpanded = false;
-    document.body.classList.remove('overflow-hidden'); // Restaurar el scroll del body
-  }
-  
 }
