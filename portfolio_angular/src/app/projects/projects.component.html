@@ -1,93 +1,124 @@
-<section id="projects" class="px-6 py-32 bg-gray-100" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
-  <h1 class="text-5xl text-center font-bold text-gray-100 mb-12">My Projects</h1>
+<section id="projects" class="px-6 py-64 lg:py-32 bg-gray-100" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
+  
+  <h1 class="text-5xl text-center font-bold text-gray-100 mb-6 mt-12">My Projects</h1>
   <div class="grid grid-cols-1 p-6 sm:p-12 md:p-16 lg:p-20 xl:p-24 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
     
     <!-- Project CineAdvisor -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
-      <div class="relative w-full aspect-[16/9] overflow-hidden">
-        <div class="carousel-inner carousel-inner-cine-advisor flex transition-transform duration-500" [style.transform]="'translateX(-' + project1.currentIndex * 100 + '%)'">
-          <img *ngFor="let img of project1.images" [src]="img" class="object-cover w-full h-full flex-shrink-0">
-        </div>
-      </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎮 CineAdvisor</h2>
-        <p class="text-gray-600 text-sm mb-2"><strong>Technologies:</strong> Django, Talwind CSS</p>
-        <p class="text-gray-600 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
-        <div class="flex justify-between mt-auto">
-          <button (click)="prevImage(project1)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10094;</button>
-          <button (click)="nextImage(project1)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10095;</button>
-        </div>
-      </div>
+<div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+  <div class="relative w-full aspect-[16/9] overflow-hidden">
+    <div class="carousel-inner carousel-inner-cine-advisor flex transition-transform duration-500" [style.transform]="'translateX(-' + project1.currentIndex * 100 + '%)'">
+      <img *ngFor="let img of project1.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
     </div>
+    <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full left-2 z-20">
+      <button (click)="prevImage(project1)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all"><span>&#10094;</span></button>
+      <button (click)="nextImage(project1)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all mr-4"><span>&#10095;</span></button>
+    </div>
+  </div>
 
+  <div class="p-6 flex flex-col flex-grow relative z-10">
+    <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎬 CineAdvisor</h2>
+    <p class="text-gray-300 text-sm mb-2"><strong>Technologies:</strong> Django, Tailwind CSS</p>
+    <p class="text-gray-300 text-sm mb-4"><strong>State:</strong> In progress... 🔨</p>
+
+    <!-- Descripción que aparece al hacer hover y al hacer clic -->
+    <div 
+      class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-200 flex items-center justify-center"
+      [class.opacity-100]="isDescriptionVisible['cineadvisor']" (click)="toggleDescription('cineadvisor')">
+      <p class="text-center text-sm">🍿 A platform that recommends movies based on your preferences and ratings. Discover new films tailored to your taste and share your thoughts by rating others' selections. 🎥</p>
+    </div>
+  </div>
+</div>
+
+
+    
     <!-- Project Click & Go -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
+    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-click-and-go flex transition-transform duration-500" [style.transform]="'translateX(-' + project2.currentIndex * 100 + '%)'">
-          <img *ngFor="let img of project2.images" [src]="img" class="object-cover w-full h-full flex-shrink-0">
+          <img *ngFor="let img of project2.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
+        </div>
+        <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full left-2 z-20">
+          <button (click)="prevImage(project2)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all"><span>&#10094;</span></button>
+          <button (click)="nextImage(project2)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all mr-4"><span>&#10095;</span></button>
         </div>
       </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎮 Click & Go</h2>
-        <p class="text-gray-600 text-sm mb-2"><strong>Technologies:</strong> Django, Talwind CSS</p>
-        <p class="text-gray-600 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
-        <div class="flex justify-between mt-auto">
-          <button (click)="prevImage(project2)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10094;</button>
-          <button (click)="nextImage(project2)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10095;</button>
+      <div class="p-6 flex flex-col flex-grow relative z-10">
+        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🛒 Click & Go</h2>
+        <p class="text-gray-300 text-sm mb-2"><strong>Technologies:</strong> Django, Talwind CSS</p>
+        <p class="text-gray-300 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
+
+        <!-- Descripción que aparece al hacer hover -->
+        <div class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-200 flex items-center justify-center" [class.opacity-100]="isDescriptionVisible['clickandgo']" (click)="toggleDescription('clickandgo')">
+          <p class="text-center text-sm">📈 A website designed to help small businesses establish an online presence. Empowering entrepreneurs to create their own websites and start selling products online. 💼</p>
         </div>
       </div>
     </div>
 
     <!-- Project Hackathon -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
+    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-hackathon flex transition-transform duration-500" [style.transform]="'translateX(-' + project3.currentIndex * 100 + '%)'">
-          <img *ngFor="let img of project3.images" [src]="img" class="object-cover w-full h-full flex-shrink-0">
+          <img *ngFor="let img of project3.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
+        </div>
+        <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full left-2 z-20">
+          <button (click)="prevImage(project3)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all"><span>&#10094;</span></button>
+          <button (click)="nextImage(project3)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all mr-4"><span>&#10095;</span></button>
         </div>
       </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎮 Hackathon</h2>
-        <p class="text-gray-600 text-sm mb-2"><strong>Technologies:</strong> Django, Talwind CSS</p>
-        <p class="text-gray-600 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
-        <div class="flex justify-between mt-auto">
-          <button (click)="prevImage(project3)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10094;</button>
-          <button (click)="nextImage(project3)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10095;</button>
+      <div class="p-6 flex flex-col flex-grow  relative z-10">
+        <h2 class="text-2xl font-semibold text-gray-300 mb-3">📚 Hackathon</h2>
+        <p class="text-gray-300 text-sm mb-2"><strong>Technologies:</strong> Django, Talwind CSS</p>
+        <p class="text-gray-300 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
+
+        <!-- Descripción que aparece al hacer hover -->
+        <div class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-200 flex items-center justify-center" [class.opacity-100]="isDescriptionVisible['hackathon']" (click)="toggleDescription('hackathon')">
+          <p class="text-center text-sm">💻 A website developed in a hackathon competition, where I had to code and ideate the project in one day. A challenging and exciting experience! 🚀</p>
         </div>
       </div>
     </div>
     
     <!-- Project Aura -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
+    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-aura-page flex transition-transform duration-500" [style.transform]="'translateX(-' + project4.currentIndex * 100 + '%)'">
-          <img *ngFor="let img of project4.images" [src]="img" class="object-cover w-full h-full flex-shrink-0">
+          <img *ngFor="let img of project4.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
+        </div>
+        <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full left-2 z-20">
+          <button (click)="prevImage(project4)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all"><span>&#10094;</span></button>
+          <button (click)="nextImage(project4)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all mr-4"><span>&#10095;</span></button>
         </div>
       </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎮 Aura page</h2>
-        <p class="text-gray-600 text-sm mb-2"><strong>Technologies:</strong> Angular, Laravel, Node.Js</p>
-        <p class="text-gray-600 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
-        <div class="flex justify-between mt-auto">
-          <button (click)="prevImage(project4)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10094;</button>
-          <button (click)="nextImage(project4)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10095;</button>
+      <div class="p-6 flex flex-col flex-grow  relative z-10">
+        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🛍️ Aura page</h2>
+        <p class="text-gray-300 text-sm mb-2"><strong>Technologies:</strong> Angular, Laravel, Node.Js</p>
+        <p class="text-gray-300 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
+
+        <!-- Descripción que aparece al hacer hover -->
+        <div class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-200 flex items-center justify-center" [class.opacity-100]="isDescriptionVisible['aurapage']" (click)="toggleDescription('aurapage')">
+          <p class="text-center text-sm">🔄 A platform for users to sell and buy whatever they wish, whether it’s new, used, or handmade products. A user-friendly interface for anyone looking to sell or purchase items easily. 💸</p>
         </div>
       </div>
     </div>
 
     <!-- Project Pokemon Cards -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
+    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-pokemon-cards flex transition-transform duration-500" [style.transform]="'translateX(-' + project5.currentIndex * 100 + '%)'">
-          <img *ngFor="let img of project5.images" [src]="img" class="object-cover w-full h-full flex-shrink-0">
+          <img *ngFor="let img of project5.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
+        </div>
+        <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full left-2 z-20">
+          <button (click)="prevImage(project5)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all"><span>&#10094;</span></button>
+          <button (click)="nextImage(project5)" class="carousel-control bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-all mr-4"><span>&#10095;</span></button>
         </div>
       </div>
-      <div class="p-6 flex flex-col flex-grow">
-        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🎮 Pokemon Cards</h2>
-        <p class="text-gray-600 text-sm mb-2"><strong>Technologies:</strong> HTML, CSS</p>
-        <p class="text-gray-600 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
-        <div class="flex justify-between mt-auto">
-          <button (click)="prevImage(project5)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10094;</button>
-          <button (click)="nextImage(project5)" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">&#10095;</button>
+      <div class="p-6 flex flex-col flex-grow  relative z-10">
+        <h2 class="text-2xl font-semibold text-gray-300 mb-3">🃏 Pokemon Cards</h2>
+        <p class="text-gray-300 text-sm mb-2"><strong>Technologies:</strong> HTML, CSS</p>
+        <p class="text-gray-300 text-sm mb-4"><strong>State:</strong> Finished ✅</p>
+
+        <!-- Descripción que aparece al hacer hover -->
+        <div class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-200 flex items-center justify-center" [class.opacity-100]="isDescriptionVisible['pokemoncards']" (click)="toggleDescription('pokemoncards')">
+          <p class="text-center text-sm">✨ A website dedicated to Pokémon card collectors, featuring interactive cards with animations. Discover and manage your collection in a fun and dynamic way. 🎴</p>
         </div>
       </div>
     </div>
@@ -95,4 +126,10 @@
 
 
   </div>
+
+  <!-- Modal para la imagen en pantalla completa -->
+<div *ngIf="isFullscreen" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-5">
+  <img [src]="currentImage" class="max-w-full max-h-full object-contain rounded-xl">
+  <button class="x-close-icon absolute top-4 right-6 text-white text-4xl font-bold hover:scale-150 transition-transform duration-500" (click)="closeFullscreen()">x</button>
+</div>
 </section>

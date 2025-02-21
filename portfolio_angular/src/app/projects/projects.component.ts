@@ -15,6 +15,18 @@ export class ProjectsComponent {
   constructor() {}
   
   formData: any = {}
+  isFullscreen: boolean = false;
+  currentImage: string = '';
+
+  // Objeto para controlar la visibilidad de las descripciones
+  isDescriptionVisible: { [key in 'cineadvisor' | 'clickandgo' | 'hackathon' | 'aurapage' | 'pokemoncards']: boolean } = {
+    cineadvisor: false,
+    clickandgo: false,
+    hackathon: false,
+    aurapage: false,
+    pokemoncards: false
+  };
+
 
   submitForm() {}
 
@@ -106,6 +118,21 @@ updateCarousel(project: any) {
   const carouselInner = document.querySelector('.carousel-inner-' + project.name) as HTMLElement;
   // Ajusta el desplazamiento (translateX) basado en el índice de la imagen
   carouselInner.style.transform = `translateX(-${project.currentIndex * 100}%)`;
+}
+
+openFullscreen(image: string): void {
+  this.currentImage = image;  // Establecer la imagen seleccionada
+  this.isFullscreen = true;   // Mostrar el modal
+}
+
+// Método para cerrar el modal
+closeFullscreen(): void {
+  this.isFullscreen = false;  // Ocultar el modal
+}
+
+toggleDescription(projectKey: 'cineadvisor' | 'clickandgo' | 'hackathon' | 'aurapage' | 'pokemoncards'): void {
+  // Al hacer clic, cambia la visibilidad de la descripción de ese proyecto
+  this.isDescriptionVisible[projectKey] = !this.isDescriptionVisible[projectKey];
 }
 
 }
