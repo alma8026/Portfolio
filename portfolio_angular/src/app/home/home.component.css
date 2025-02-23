@@ -22,16 +22,16 @@
 }
 
 #conoceMasBtn {
-  background: #1bd8a9;
+  background: #6B97D9;
   box-shadow: 0 0 25px #fff;
 }
 
 #conoceMasBtn:hover {
-  background-color: #00bfa5;
-  box-shadow: 0 0 5px #a7ffeb,
-              0 0 25px #a7ffeb,
-              0 0 50px #a7ffeb,
-              0 0 70px #a7ffeb;
+  background-color: #5883c2;
+  box-shadow: 0 0 5px #6B97D9,
+              0 0 25px #6B97D9,
+              0 0 50px #6B97D9,
+              0 0 70px #6B97D9;
 }
 
 .port-anim {

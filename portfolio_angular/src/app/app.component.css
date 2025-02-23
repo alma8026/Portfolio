@@ -6,8 +6,9 @@
   }
 
   #mobileMenu {
-    background: rgb(62,62,62);
-background: linear-gradient(39deg, rgba(62,62,62,0.9) 0%, rgba(37,37,37,0.9) 16%, rgba(17,17,17,0.9) 40%, rgba(52,52,52,0.9) 76%, rgba(0,0,0,0.9) 100%);
+    background: rgba(107, 151, 217, 0.65);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.4);
   }
   
   .nav-link::after {
@@ -17,22 +18,30 @@ background: linear-gradient(39deg, rgba(62,62,62,0.9) 0%, rgba(37,37,37,0.9) 16%
     left: 0;
     width: 0%;
     height: 2.5px;
-    background-color: #00bfa5;
+    background-color: #6B97D9;
     transition: width 0.4s ease, left 0.4s ease;
   }
   
   .nav-link:hover {
-    color: #a7ffeb;
-    text-shadow: 0 0 5px #a7ffeb,
-              0 0 25px #a7ffeb,
-              0 0 50px #a7ffeb,
-              0 0 100px #a7ffeb;
+    color: #6B97D9;
+    text-shadow: 0 0 5px #608dd1,
+              0 0 25px #608dd1,
+              0 0 50px #608dd1,
+              0 0 100px #608dd1;
   }
   
   .nav-link:hover::after {
     width: 100%;
     left: 0;
   }
+
+  .nav-link-mb:hover {
+    color: white;
+    background: rgba(126, 170, 235, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
   .cvImg {
     transition: transform 0.75s ease;
   }

@@ -1,14 +1,17 @@
 /* Estilos generales para las cartas */
 .project-card {
   border-radius: 20px;
-  background: rgb(0,0,0);
-background: linear-gradient(61deg, rgba(0,0,0,0.95) 0%, rgba(62,62,62,0.95) 100%);
+  background: rgb(10,13,25);
+background: linear-gradient(42deg, rgba(10,13,25,1) 0%, rgba(93,138,204,1) 77%, rgba(116,163,231,1) 98%);
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px #A7C7E7,
+              0 0 25px #A7C7E7,
+              0 0 30px #A7C7E7,
+              0 0 40px #A7C7E7;
 }
 
 /* Efectos de las flechas de navegación del carrusel */
@@ -23,7 +26,7 @@ background: linear-gradient(61deg, rgba(0,0,0,0.95) 0%, rgba(62,62,62,0.95) 100%
   border-radius: 50%;
   color: white;
   font-size: 1.5rem;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra suave */
   transition: all 0.3s ease-in-out;
 }
 
@@ -34,7 +37,7 @@ background: linear-gradient(61deg, rgba(0,0,0,0.95) 0%, rgba(62,62,62,0.95) 100%
 .carousel-control:hover {
   background-color: #6B97D9; /* Azul pastel más oscuro al hacer hover */
   transform: scale(1.15); /* Efecto de expansión suave */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más sutil al hacer hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.45); /* Sombra más sutil al hacer hover */
 }
 
 .carousel-control:focus {
@@ -89,6 +92,7 @@ background: linear-gradient(61deg, rgba(0,0,0,0.95) 0%, rgba(62,62,62,0.95) 100%
 }
 
 .x-close-icon {
+  font-size: 50px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-shadow: 0 0 5px black,
               0 0 25px black,
@@ -106,6 +110,6 @@ background: linear-gradient(61deg, rgba(0,0,0,0.95) 0%, rgba(62,62,62,0.95) 100%
 
 .description-container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: rgb(37,37,37);
-background: radial-gradient(circle, rgba(37,37,37,0.95) 0%, rgba(0,0,0,0.95) 73%);
+  background: rgb(16,20,37);
+background: linear-gradient(42deg, rgba(16,20,37,1) 0%, rgba(35,55,85,1) 13%, rgba(18,24,42,1) 47%, rgba(35,54,84,1) 81%, rgba(16,20,37,1) 100%);
 }

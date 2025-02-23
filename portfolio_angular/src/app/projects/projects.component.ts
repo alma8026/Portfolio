@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -27,6 +27,7 @@ export class ProjectsComponent {
     pokemoncards: false
   };
 
+  isMobile: boolean = window.innerWidth <= 768;
 
   submitForm() {}
 
@@ -132,7 +133,14 @@ closeFullscreen(): void {
 
 toggleDescription(projectKey: 'cineadvisor' | 'clickandgo' | 'hackathon' | 'aurapage' | 'pokemoncards'): void {
   // Al hacer clic, cambia la visibilidad de la descripción de ese proyecto
-  this.isDescriptionVisible[projectKey] = !this.isDescriptionVisible[projectKey];
+  if (this.isMobile) {
+    this.isDescriptionVisible[projectKey] = !this.isDescriptionVisible[projectKey];
+  }
 }
+
+@HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isMobile = window.innerWidth <= 768;
+  }
 
 }
