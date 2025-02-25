@@ -1,8 +1,6 @@
 /* Estilos generales para las cartas */
 .project-card {
   border-radius: 20px;
-  background: rgb(10,13,25);
-background: linear-gradient(42deg, rgba(10,13,25,1) 0%, rgba(93,138,204,1) 77%, rgba(116,163,231,1) 98%);
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -110,6 +108,28 @@ background: linear-gradient(42deg, rgba(10,13,25,1) 0%, rgba(93,138,204,1) 77%, 
 
 .description-container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: rgb(16,20,37);
-background: linear-gradient(42deg, rgba(16,20,37,1) 0%, rgba(35,55,85,1) 13%, rgba(18,24,42,1) 47%, rgba(35,54,84,1) 81%, rgba(16,20,37,1) 100%);
+}
+
+/* Aplica la animación a los elementos */
+.appear {
+  animation: fadeInUp 1.2s ease-out; /* Tiempo un poco mayor para un efecto más suave */
+}
+
+/* Animación de aparición mejorada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Inicia un poco más abajo */
+    filter: blur(6px); /* Agrega un pequeño desenfoque al principio */
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(-30px); /* Movimiento más suave hacia arriba */
+    filter: blur(0px); /* Menos desenfoque mientras se acerca al final */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0); /* Desenfoque eliminado al final */
+  }
 }

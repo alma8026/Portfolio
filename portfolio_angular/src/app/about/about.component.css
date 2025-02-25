@@ -1,3 +1,32 @@
-#about {
-    background: linear-gradient(180deg, rgba(19,12,17,1) 0%, rgba(0,0,47,1) 100%);
+.about-text {
+    -webkit-border-top-left-radius: 24px;
+-webkit-border-bottom-left-radius: 24px;
+-moz-border-radius-topleft: 24px;
+-moz-border-radius-bottomleft: 24px;
+border-top-left-radius: 24px;
+border-bottom-left-radius: 24px;
 }
+
+/* Aplica la animación a los elementos */
+.appear {
+    animation: fadeInUp 1.2s ease-out; /* Tiempo un poco mayor para un efecto más suave */
+  }
+  
+  /* Animación de aparición mejorada */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Inicia un poco más abajo */
+      filter: blur(6px); /* Agrega un pequeño desenfoque al principio */
+    }
+    60% {
+      opacity: 0.6;
+      transform: translateY(-30px); /* Movimiento más suave hacia arriba */
+      filter: blur(0px); /* Menos desenfoque mientras se acerca al final */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0); /* Desenfoque eliminado al final */
+    }
+  }

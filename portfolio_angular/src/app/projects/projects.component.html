@@ -1,10 +1,10 @@
-<section id="projects" class="px-6 pt-64 bg-gray-100" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
+<section id="projects" class="px-6 pt-52 bg-gray-100" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
   
-  <h1 class="text-5xl text-center font-bold text-gray-100 mb-6 mt-20">My Projects</h1>
-  <div class="grid grid-cols-1 p-6 sm:p-12 md:p-16 lg:p-20 xl:p-24 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
+  <h1 class="text-5xl text-center font-bold text-gray-100 mb-6 mt-20 appear">My Projects</h1>
+  <div class="grid grid-cols-1 p-6 sm:p-12 md:p-16 lg:p-20 xl:p-24 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3 appear">
     
     <!-- Project CineAdvisor -->
-<div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+<div class="project-card bg-violet-950 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group appear">
   <div class="relative w-full aspect-[16/9] overflow-hidden">
     <div class="carousel-inner carousel-inner-cine-advisor flex transition-transform duration-500" [style.transform]="'translateX(-' + project1.currentIndex * 100 + '%)'">
       <img *ngFor="let img of project1.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
@@ -22,7 +22,7 @@
 
     <!-- Descripción que aparece al hacer hover y al hacer clic -->
     <div 
-  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-100 flex items-center justify-center"
+  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-85 p-12 text-gray-100 flex items-center justify-center"
   [class.opacity-100]="isMobile ? isDescriptionVisible['cineadvisor'] : null"
   (click)="isMobile && toggleDescription('cineadvisor')">
       <p class="text-center text-sm">🍿 A platform that recommends movies based on your preferences and ratings. Discover new films tailored to your taste and share your thoughts by rating others' selections. 🎥</p>
@@ -33,7 +33,7 @@
 
     
     <!-- Project Click & Go -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+    <div class="project-card bg-orange-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group appear">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-click-and-go flex transition-transform duration-500" [style.transform]="'translateX(-' + project2.currentIndex * 100 + '%)'">
           <img *ngFor="let img of project2.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
@@ -50,7 +50,7 @@
 
         <!-- Descripción que aparece al hacer hover -->
         <div 
-  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-100 flex items-center justify-center"
+  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-85 p-12 text-gray-100 flex items-center justify-center"
   [class.opacity-100]="isMobile ? isDescriptionVisible['clickandgo'] : null"
   (click)="isMobile && toggleDescription('clickandgo')">
           <p class="text-center text-sm">📈 A website designed to help small businesses establish an online presence. Empowering entrepreneurs to create their own websites and start selling products online. 💼</p>
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Project Hackathon -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+    <div class="project-card bg-neutral-600 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group appear">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-hackathon flex transition-transform duration-500" [style.transform]="'translateX(-' + project3.currentIndex * 100 + '%)'">
           <img *ngFor="let img of project3.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
@@ -76,7 +76,7 @@
 
         <!-- Descripción que aparece al hacer hover -->
         <div 
-  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-100 flex items-center justify-center"
+  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-85 p-12 text-gray-100 flex items-center justify-center"
   [class.opacity-100]="isMobile ? isDescriptionVisible['hackathon'] : null"
   (click)="isMobile && toggleDescription('hackathon')">
           <p class="text-center text-sm">💻 A website developed in a hackathon competition, where I had to code and ideate the project in one day. A challenging and exciting experience! 🚀</p>
@@ -85,7 +85,7 @@
     </div>
     
     <!-- Project Aura -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+    <div class="project-card bg-sky-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group appear">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-aura-page flex transition-transform duration-500" [style.transform]="'translateX(-' + project4.currentIndex * 100 + '%)'">
           <img *ngFor="let img of project4.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
@@ -102,7 +102,7 @@
 
         <!-- Descripción que aparece al hacer hover -->
         <div 
-  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-100 flex items-center justify-center"
+  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-85 p-12 text-gray-100 flex items-center justify-center"
   [class.opacity-100]="isMobile ? isDescriptionVisible['aurapage'] : null"
   (click)="isMobile && toggleDescription('aurapage')">
           <p class="text-center text-sm">🔄 A platform for users to sell and buy whatever they wish, whether it’s new, used, or handmade products. A user-friendly interface for anyone looking to sell or purchase items easily. 💸</p>
@@ -111,7 +111,7 @@
     </div>
 
     <!-- Project Pokemon Cards -->
-    <div class="project-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group">
+    <div class="project-card bg-emerald-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all transform hover:scale-105 flex flex-col relative group appear">
       <div class="relative w-full aspect-[16/9] overflow-hidden">
         <div class="carousel-inner carousel-inner-pokemon-cards flex transition-transform duration-500" [style.transform]="'translateX(-' + project5.currentIndex * 100 + '%)'">
           <img *ngFor="let img of project5.images" [src]="img" class="object-cover w-full h-full flex-shrink-0 hover:cursor-pointer" (click)="openFullscreen(img)">
@@ -128,7 +128,7 @@
 
         <!-- Descripción que aparece al hacer hover -->
         <div 
-  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-70 p-12 text-gray-100 flex items-center justify-center"
+  class="description-container opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 bg-black bg-opacity-85 p-12 text-gray-100 flex items-center justify-center"
   [class.opacity-100]="isMobile ? isDescriptionVisible['pokemoncards'] : null"
   (click)="isMobile && toggleDescription('pokemoncards')">
           <p class="text-center text-sm">✨ A website dedicated to Pokémon card collectors, featuring interactive cards with animations. Discover and manage your collection in a fun and dynamic way. 🎴</p>
