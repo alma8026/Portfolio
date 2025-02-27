@@ -30,3 +30,11 @@ border-bottom-left-radius: 24px;
       filter: blur(0); /* Desenfoque eliminado al final */
     }
   }
+
+  .bg-color {
+    background-color: #1C2432;
+  }
+
+  .bg-text-color {
+    color: #1C2432;
+  }

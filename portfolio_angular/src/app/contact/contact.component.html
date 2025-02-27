@@ -1,25 +1,25 @@
 <div class="min-h-screen flex items-center justify-center px-4 py-24" style="background: url('assets/images/bg-portfolio.png') no-repeat center/cover; background-attachment: fixed;">
-    <div class="max-w-2xl w-full bg-white p-8 rounded-lg shadow-lg appear">
-        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">Contact Me</h2>
+    <div class="max-w-2xl w-full bg-gray-900 bg-opacity-80 p-8 rounded-lg shadow-lg appear">
+        <h2 class="text-2xl font-semibold text-stone-200 text-center mb-6">Contact Me</h2>
         <form (ngSubmit)="enviarCorreo()" #contactForm="ngForm">
             <div class="mb-4">
-                <label for="name" class="block text-gray-700">Name</label>
+                <label for="name" class="block text-stone-200">Name</label>
                 <input type="text" id="name" name="name" [(ngModel)]="name" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
             <div class="mb-4">
-                <label for="email" class="block text-gray-700">Your email</label>
+                <label for="email" class="block text-stone-200">Your email</label>
                 <input type="email" id="email" name="email" [(ngModel)]="email" email required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
             <div class="mb-4">
-                <label for="subject" class="block text-gray-700">Subject</label>
+                <label for="subject" class="block text-stone-200">Subject</label>
                 <input type="text" id="subject" name="subject" [(ngModel)]="subject" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
             <div class="mb-4">
-                <label for="message" class="block text-gray-700">Message</label>
+                <label for="message" class="block text-stone-200">Message</label>
                 <textarea id="message" name="message" rows="5" [(ngModel)]="message" required class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" [disabled]="!contactForm.valid" [style.backgroundColor]="!contactForm.valid ? '#cccccc' : '#4a90e2'" class="w-full bg-indigo-600 text-white p-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button type="submit" [disabled]="!contactForm.valid" [style.backgroundColor]="!contactForm.valid ? '#cccccc' : '#6B97D9'" class="btn-submit w-full text-white p-3 rounded-lg">
                     Send Message
                 </button>
             </div>
